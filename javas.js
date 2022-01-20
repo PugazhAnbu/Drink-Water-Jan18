@@ -63,7 +63,7 @@ function smallcupbgcolor(index){
 	}
     //console.log(index)
  //removeifbgpresent(index)
- bigcupcalculation(index)
+ //bigcupcalculation(index)
    smallcups[index].addEventListener('click', ()=>{
      //console.log(index)
      //console.log(smallcups[index].style.backgroundColor)
