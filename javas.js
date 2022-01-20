@@ -58,34 +58,44 @@ const remain = document.getElementById("remained")
 
 function smallcupbgcolor(index){
    	for(var i = 0; i <index+1; i++){
-        smallcups[i].style.backgroundColor = "#6ab3f8";
+        smallcups[i].style.backgroundColor = "rgb(106, 179, 248)";
        // smallcups[i].style.backgroundColor = "lightblue";
 	}
     //console.log(index)
  //removeifbgpresent(index)
+ bigcupcalculation(index)
    smallcups[index].addEventListener('click', ()=>{
-        if(smallcups[index].style.backgroundColor === '#6ab3f8'){
-            smallcups[index].style.backgroundColor='#fff';
+     //console.log(index)
+     //console.log(smallcups[index].style.backgroundColor)
+     
+        if(smallcups[index].style.backgroundColor === 'rgb(106, 179, 248)'){
+            console.log("pugazh")
+           // index--;
+              smallcups[index].style.backgroundColor='#fff';
+                //removebg(index)
+                bigcupcalculation(index-1)
         }else{
-            smallcups[index].style.backgroundColor = "#6ab3f8";
-           
+            smallcups[index].style.backgroundColor = "rgb(106, 179, 248)";
+           // removebg(index)
+          // smallcupbgcolor(index)
+            bigcupcalculation(index)
         }
      })
-    bigcupcalculation(index)
+    //bigcupcalculation(index)
 }
 
 function removebg(index){
     for(let i = index+1;i<smallcups.length;i++){
         smallcups[i].style.backgroundColor = "#fff";
        }
-         // bigcupcalculation(index)
+        //bigcupcalculation(index)
 }
 // function removeifbgpresent(index){
    
 // }
-
+  
 function bigcupcalculation(index){
-    const filledsmallcups = index +1;
+    const filledsmallcups = index+1;
     const totalcups = smallcups.length;
     if(bigcup === 0 ) {
     percentage.style.visibility = "hidden";
